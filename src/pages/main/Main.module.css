@@ -1,0 +1,143 @@
+.Middle {
+    margin-top: 15%;
+    text-align: center;
+    vertical-align: center;
+}
+
+.TitleCN {
+    font-size: xx-large;
+}
+
+.TitleEN {
+    font-size: large;
+}
+
+.icon {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: 14px;
+    margin-right: 10px;
+    font-size: 14px;
+    -webkit-transition: font-size 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: font-size 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.topBox {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    height: 64px;
+}
+
+.topInlineBox {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    height: 64px;
+}
+
+.topItem {
+    margin: 5px;
+    min-width: 100px;
+}
+
+.header {
+    font-size: x-large;
+    font-family: Microsoft Yahei, serif;
+    font-style: italic;
+    padding-top: 5px;
+}
+
+.version{
+    /* font-size: large; */
+    font-family: Microsoft Yahei, serif;
+}
+
+.titleBox {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 160px;
+}
+
+.titleInlineLeftBox {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    height: 160px;
+    margin-left: 100px;
+}
+
+.titleInlineRightBox {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    height: 160px;
+    margin-right: 100px;
+}
+
+.titleItem {
+    /*display:flex;*/
+    margin-left: 10px;
+    min-width: 300px;
+}
+
+.titleRightItem {
+    text-align: center;
+    min-width: 80px;
+}
+
+.vline {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888888;
+    height: 50px;
+}
+
+.main {
+    background-color: lightgray;
+}
+
+.body {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+}
+
+.map {
+    margin: 20px;
+    width: 70%;
+}
+
+.mainRight {
+    margin: 10px;
+    width: 30%;
+}
+
+.deal {
+    margin: 10px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.bellMessage{
+    border-color: #888888;
+}

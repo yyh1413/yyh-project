@@ -1,0 +1,8 @@
+/*@import '~antd/dist/antd.css';*/
+
+/* .App{
+    @primary-color : #1DA57A
+} */
+table thead th {
+    text-align: center !important;
+}
