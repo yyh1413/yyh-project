@@ -50,11 +50,11 @@ const info = {
     },
   ],
   log: [
-    {data: '2016.8.26', readme: '注册域名yangyuhao.cn'},
-    {data: '2016.9.19', readme: '域名完成ICP备案'},
-    {data: '2016.8.26', readme: '网站Beta版原创界面上线'},
-    {data: '2016.8.26', readme: '网站1.0版原创界面上线'},
-    {data: '2016.8.26', readme: '网站加入响应式界面框架'},
+    {data: '2021.8.12', readme: '注册域名yangyuhao.cn'},
+    {data: '2021.8.20', readme: '域名完成ICP备案'},
+    {data: '2021.8.20', readme: '网站Beta版原创界面上线'},
+    {data: '2021.8.24', readme: '网站1.0版原创界面上线'},
+    {data: '2021.8.24', readme: '网站加入响应式界面框架'},
   ]
 }
 
