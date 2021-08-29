@@ -31,7 +31,7 @@ class Main extends React.Component<IProps, IState> {
       const scroll_events = "mousewheel DOMMouseScroll MozMousePixelScroll";  // 鼠标滚轮滚动事件名
       const logbox = $('#logBox');
       const main = $('#main');
-      // 鼠标移入 移出事件
+      // 鼠标移入 移出事件1
       logbox.mouseover(function () {
         main.bind('mousewheel', function (event, delta) {
           return false;
