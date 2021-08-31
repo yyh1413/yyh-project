@@ -31,7 +31,7 @@ class Main extends React.Component<IProps, IState> {
       const scroll_events = "mousewheel DOMMouseScroll MozMousePixelScroll";  // 鼠标滚轮滚动事件名
       const logbox = $('#logBox');
       const main = $('#main');
-      // 鼠标移入 移出事件1
+      // 鼠标移入 移出事件
       logbox.mouseover(function () {
         main.bind('mousewheel', function (event, delta) {
           return false;
@@ -130,6 +130,9 @@ class Main extends React.Component<IProps, IState> {
         {/*-------------------------------首页---------------------------------------------------*/}
 
         <div id={'top'}>
+          <div id="midground" className="wall"></div>
+          <div id="foreground" className="wall"></div>
+          <div id="top1" className="wall"></div>
           <a href={'top'}/>
           <div id={'top_title'}>
             <div>
@@ -175,7 +178,8 @@ class Main extends React.Component<IProps, IState> {
               ))
             }
           </div>
-          <canvas id="canvas" style={{position: "absolute", width: "100%"}}/>
+          <div className="ball"/>
+          {/*<canvas id="canvas" style={{position: "absolute", width: "100%"}}/>*/}
         </div>
         {/*-------------------------------关于---------------------------------------------------*/}
         {/*---------------------------------作品-------------------------------------------------*/}

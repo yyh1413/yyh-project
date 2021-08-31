@@ -1,6 +1,6 @@
 #main {
   width: 100%;
-  height: 200%;
+
 
   .navBar {
     position: fixed;
@@ -55,11 +55,12 @@
     width: 100%;
     height: 100vh;
     border: 1px solid #3333;
-    z-index: -1;
+    z-index: 5;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('../../static/bg.jpg');
     color: transparent;
+    background-attachment: fixed;
     transition: opacity 1s;
     opacity: 0;
     .flex_direction_column();
@@ -70,6 +71,7 @@
 
 
     #top_title {
+      z-index: 100;
       width: 100%;
       height: 10%;
       padding: 0 10%;
@@ -101,6 +103,7 @@
     }
 
     .middle {
+      z-index: 100;
       .flex_justify_items_center();
       height: 80%;
 
@@ -128,11 +131,13 @@
     }
 
     .bottom {
+      z-index: 100;
       width: 100%;
       height: 10%;
       .flex_justify_items_center();
       margin-top: -30px;
       z-index: 100;
+
       #scrollDownIcon {
         position: absolute;
         left: 50%;
@@ -174,7 +179,6 @@
   #about {
     height: 100%;
     background: white;
-
 
     .tagBox {
       margin-top: 30px;
@@ -291,6 +295,7 @@
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
     }
+
     //#logBox::-webkit-scrollbar {
     //  display: none;
     //}
@@ -309,9 +314,11 @@
       font-family: "Microsoft Yahei", PingFangSC-Regular;
       font-weight: bold;
     }
-    .logText3{
+
+    .logText3 {
       color: #979797;
     }
+
     .logText2 {
       font-size: small;
       line-height: 5px;
@@ -563,5 +570,201 @@
 
   .navLink:active {
     color: rgba(255, 255, 255, 0.6);
+  }
+
+
+  /*----------------------------------满天星----------------------------------*/
+
+  .wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  div#midground {
+    background: url("../../static/midground.png");
+    z-index: 1;
+    -webkit-animation: cc 100s linear infinite;
+    -moz-animation: cc 100s linear infinite;
+    -o-animation: cc 100s linear infinite;
+    animation: cc 100s linear infinite;
+  }
+
+  div#foreground {
+    background: url("../../static/foreground.png");
+    z-index: 2;
+    -webkit-animation: cc 153s linear infinite;
+    -o-animation: cc 153s linear infinite;
+    -moz-animation: cc 153s linear infinite;
+    animation: cc 153s linear infinite;
+  }
+
+  div#top1 {
+    background: url("../../static/midground.png");
+    z-index: 4;
+    -webkit-animation: dd 100s linear infinite;
+    -o-animation: dd 100s linear infinite;
+    animation: da 100s linear infinite;
+  }
+
+
+  @-webkit-keyframes cc {
+    from {
+      background-position: 0 0;
+      transform: translateY(10px);
+    }
+    to {
+      background-position: 600% 0;
+    }
+  }
+  @-o-keyframes cc {
+    from {
+      background-position: 0 0;
+      transform: translateY(10px);
+    }
+    to {
+      background-position: 600% 0;
+    }
+  }
+  @-moz-keyframes cc {
+    from {
+      background-position: 0 0;
+      transform: translateY(10px);
+    }
+    to {
+      background-position: 600% 0;
+    }
+  }
+  @keyframes cc {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 600% 0;
+    }
+  }
+
+  @keyframes da {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 600%;
+    }
+  }
+  @-webkit-keyframes da {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 600%;
+    }
+  }
+  @-moz-keyframes da {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 600%;
+    }
+  }
+  @-ms-keyframes da {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 600%;
+    }
+  }
+  /*----------------------------------满天星----------------------------------*/
+
+  .ball {
+    animation: float 3.5s ease-in-out infinite;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+
+    background: radial-gradient(
+            circle at 75% 30%,
+            white 5px,
+            aqua 8%,
+            darkblue 60%,
+            aqua 100%
+    );
+    box-shadow: inset 0 0 20px #fff, inset 10px 0 46px #eaf5fc,
+    inset 88px 0px 60px #c2d8fe, inset -20px -60px 100px #fde9ea,
+    inset 0 50px 140px #fde9ea, 0 0 90px #fff;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-80px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+
+  .shadow {
+    background: #b490b2;
+    width: 150px;
+    height: 40px;
+    top: 70%;
+    animation: expand 4s infinite;
+    position: absolute;
+    border-radius: 50%;
+  }
+  @keyframes expand {
+    0%,
+    100% {
+      transform: scale(0.5);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .ball {
+      animation: float 4.5s ease-in-out infinite;
+      height: 120px;
+      width: 120px;
+
+      background: radial-gradient(
+              circle at 65% 35%,
+              white 5px,
+              aqua 15%,
+              darkblue 50%,
+              aqua 100%
+      );
+      box-shadow: inset 0 -20px 30px #fff, inset 40px 0 46px #eaf5fc,
+      inset 58px 0px 60px #c2d8fe, inset -8px -30px 100px #fde9ea,
+      inset 0 20px 110px #fde9ea, 0 0 90px #fff;
+    }
+    .shadow {
+      width: 90px;
+      height: 20px;
+      top: 78%;
+      animation: expand 5s infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+      50% {
+        transform: translatey(-50px);
+      }
+      100% {
+        transform: translatey(0px);
+      }
+    }
   }
 }
