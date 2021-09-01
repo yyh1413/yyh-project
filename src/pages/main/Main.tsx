@@ -17,6 +17,7 @@ interface IState {
 
 
 class Main extends React.Component<IProps, IState> {
+  private scrollWidth = window.innerWidth;
 
   public componentDidMount() {
     setTimeout(() => {
@@ -104,6 +105,11 @@ class Main extends React.Component<IProps, IState> {
   }
 
   public updateNav = () => {
+    if (this.scrollWidth < 1000) {
+      // @ts-ignore
+      document.getElementById("navBar").style.display = 'none';
+      return
+    }
     // @ts-ignore
     if (document.documentElement.scrollTop < 600) {
       // @ts-ignore
@@ -115,6 +121,7 @@ class Main extends React.Component<IProps, IState> {
   }
 
   public render() {
+    const scrollWidth = this.scrollWidth < 1000;
     const {info} = api;
     const border = true;
     return (
@@ -192,7 +199,7 @@ class Main extends React.Component<IProps, IState> {
               info.work.map((item, index) => (
                 <span key={index} className="workLink">
                   <div className="workLinkPic">
-                    <img src={item.bgImg} alt="" width={300} height={155}/>
+                    <img src={item.bgImg} alt="" width={"100%"} height={155}/>
                   </div>
                   <div className="workLinkTextBox">
                     <p className="workLinkText1">{item.workLinkText1}</p>
