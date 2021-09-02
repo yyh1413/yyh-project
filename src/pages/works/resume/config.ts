@@ -30,17 +30,17 @@ const info = {
         readme: '园林专业： 景观设计 photoShop 3dMax cad ',
       },
     ],
-    work: [{
-      img: wkBg1,
-      company: '深圳鹰硕 ',
-      date: '2018.1-2020.11',
-      readme: '全栈开发： javaScript jquery html css java spring mysql nginx ',
-    },
+    work: [
       {
         img: wkBg1,
         company: '文思海辉',
         date: '2020.9-2021',
         readme: 'web前端： javaScript jquery html css java spring mysql nginx ',
+      }, {
+        img: wkBg1,
+        company: '华信',
+        date: '2018.1-2020.11',
+        readme: '全栈开发： javaScript jquery html css java spring mysql nginx ',
       },
     ]
   },
