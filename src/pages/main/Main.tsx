@@ -10,6 +10,7 @@ import $ from 'jquery'
 // import {SMTPClient} from 'emailjs'
 
 interface IProps {
+  history: any
 }
 
 interface IState {
@@ -282,7 +283,7 @@ class Main extends React.Component<IProps, IState> {
               <p>{`即时客服QQ：${info.qq}`}</p>
               <p>无休，8:00AM-21:00PM。紧急事件24小时响应。</p>
               <br/>
-              <h2>社交媒体</h2>
+              <a onClick={() => this.props.history.push('/resume')}>个人简历</a>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+@text_color: #00a86b;
 #resume {
   margin: 0;
   padding: 0;
@@ -16,6 +17,29 @@
     font-family: 'Open Sans', sans-serif;
     line-height: 1.42857143;
 
+    .home_top {
+      font-weight: 800;
+      font-size: 2rem;
+    }
+
+
+    .home_title {
+      padding: 10px 5px;
+      line-height: 2.1rem;
+      color: #FFFFFF;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .home_title_1 {
+
+      color: @text_color;
+      line-height: 2.1rem;
+      font-family: "Rubik", sans-serif;
+      background: rgba(148, 133, 133, 0.15);
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
     .banner_info {
       width: 100%;
       height: 100%;
@@ -30,10 +54,10 @@
     }
 
     .header_right h1 {
-      font-size: 1.2em;
+      font-size: 1.4em;
       color: #FFF;
       font-weight: 600;
-      background: #00a78e;
+      background: @text_color;
       display: inline-block;
       padding: .5em 1.5em;
       position: relative;
@@ -49,7 +73,7 @@
       left: 12px;
       border-style: solid;
       border-width: 14px 11px 0 12px;
-      border-color: #00a78e transparent transparent transparent;
+      border-color: @text_color transparent transparent transparent;
     }
 
     .header_right h2 {
@@ -73,6 +97,24 @@
       padding-top: 0.5em;
     }
 
+    @media screen and (max-width: 500px) {
+      .home_top {
+        font-weight: 800;
+        font-size: 1.3rem;
+      }
+
+      .hr {
+        margin-top: 1em;
+        border-top: 1px solid #AFAFAF;
+        padding-top: 0.5em;
+      }
+
+      h1 {
+        font-weight: bold;
+        font-size: 1rem !important;
+      }
+    }
+
     .home_info {
       padding: 30px 20px 20px 0;
     }
@@ -92,6 +134,16 @@
       .home_value {
         letter-spacing: 1px;
         color: #ececec;
+
+      }
+
+      .home_value_url {
+        cursor: pointer;
+        color: #6bb67d;
+        text-decoration: underline;
+      }
+      .home_value_url:hover {
+        color: #539e64;
       }
     }
 
@@ -153,25 +205,33 @@
     }
     @media screen and (max-width: 800px) and (min-width: 410px) {
       .header_left {
-        width: 370px;
-        height: 350px;
-        padding: 2% 14%;
+        .flex_justify_items_center();
+        height: 250px;
+        padding: 4% 25%;
+      }
+
+      .timeline-panel {
+        width: 200px;
       }
 
       .home_info_ul {
-        font-size: 0.8em;
+        font-size: 1.2em;
         line-height: 2.5em;
       }
     }
     @media screen and (max-width: 410px) and (min-width: 300px) {
       .header_left {
-        width: 335px;
-        height: 280px;
-        padding: 2% 16%;
+        .flex_justify_items_center();
+        height: 220px;
+        padding: 4% 25% 4%;
+      }
+
+      .timeline-panel {
+        width: 200px !important;
       }
 
       .home_info_ul {
-        font-size: 0.8em;
+        font-size: 1em;
         line-height: 2.5em;
       }
     }
@@ -181,6 +241,266 @@
     #home {
       padding: 20px;
     }
+  }
+  //------------------------home-----------------------------------------------
+
+  #about, #skill, #work {
+    padding: 0 12%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    .flex_direction_column();
+    .flex_justify_items_center();
+
+    h1 {
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  #about {
+    .about_row {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      > div {
+        padding: 10px;
+        width: 50%;
+        min-width: 300px;
+        .flex_direction_column();
+      }
+
+      .about_ex {
+
+        padding: 10px 10px 10px 15px;
+        width: 100%;
+        min-height: 145px;
+        border: 1px solid #dee2e6 !important;
+        border-radius: 5px;
+        .flex_direction_column();
+        margin-top: 20px;
+
+        .about_img {
+          width: 70px;
+          height: 70px;
+          margin-right: 20px;
+          border-radius: 50%;
+          .flex_justify_items_center();
+          background-color: #ececec;
+          overflow: hidden;
+        }
+
+        .about_ex_date {
+          text-align: center;
+          background-color: @text_color;
+          font-weight: bold;
+          min-width: 151px;
+          color: #fff;
+          border-radius: 5px;
+          font-size: 1rem;
+        }
+
+        .about_ex_readme {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  #skill {
+    width: 100%;
+    background-color: #f1f1f1;
+
+    .skill_row {
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+
+    .skill_ex {
+      background-color: #FFFFFF;
+      padding: 10px 15px 10px 15px;
+      min-height: 93px;
+      border: 1px solid #dee2e6 !important;
+      border-radius: 5px;
+      width: 340px;
+      min-width: 300px;
+      margin: 10px;
+
+      .skill_ex_title {
+
+        color: black;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        .flex_justify_space_between();
+      }
+
+      .skill_ex_progress {
+
+      }
+    }
+
+  }
+
+  #work {
+    .work_row {
+      padding-left: 15%;
+
+      .work_row_ex {
+        .flex_display();
+      }
+
+      .work_row_date {
+        margin-top: 40px;
+        width: 195px;
+        height: 44px;
+        padding: 20px 40px;
+        background-color: black;
+        color: #FFFFFF;
+        .flex_justify_items_center();
+        font-size: 1.5rem;
+      }
+
+      @media screen and (max-width: 500px) {
+        .work_row_date {
+          display: none;
+        }
+      }
+
+      .work_row_icon {
+        width: 1px;
+        border-right: 1px solid #b6b6b6;
+        margin-left: 15%;
+        margin-right: 15%;
+        position: relative;
+
+        .icon_div {
+          position: absolute;
+          color: #fff;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          font-size: 1.4em;
+          text-align: center;
+          top: 35px;
+          left: -26px;
+          margin-right: -25px;
+          background-color: #999999;
+          z-index: 100;
+          border-radius: 50%;
+          .flex_justify_items_center();
+        }
+      }
+
+      .work_row_readme {
+        padding: 30px 0;
+
+        .work_row_readme_tem {
+          margin-bottom: 10px;
+          position: relative;
+        }
+
+        //=====================================
+        .timeline-panel {
+          width: 400px;
+          float: right;
+          border: 1px solid #d4d4d4;
+          padding: 15px 15px;
+          position: relative;
+          box-shadow: 0 1px 6px #ececec;
+          background: #fff;
+          border-bottom: 5px solid #00a78e;
+        }
+
+        .timeline-panel:before {
+          position: absolute;
+          top: 18px;
+          left: -15px;
+          display: inline-block;
+          border-top: 15px solid transparent;
+          border-right: 15px solid #878787;
+          border-left: 0 solid #878787;
+          border-bottom: 15px solid transparent;
+          content: " ";
+        }
+
+        .timeline-panel :after {
+          position: absolute;
+          top: 19px;
+          left: -14px;
+          display: inline-block;
+          border-top: 14px solid transparent;
+          border-right: 14px solid #fff;
+          border-left: 0 solid #fff;
+          border-bottom: 14px solid transparent;
+          content: " ";
+        }
+
+        h4.timeline-title {
+          color: #1b242f;
+          font-size: 1.2em;
+          font-family: 'Asap', sans-serif;
+          font-weight: 600;
+        }
+
+        .timeline-body p {
+          font-size: 0.9em;
+          margin: 0;
+          padding: 0;
+          color: #777;
+          line-height: 1.9em;
+        }
+
+
+      }
+
+    }
+
+    @media screen and (max-width: 800px) and (min-width: 410px) {
+      .timeline-panel {
+        width: 240px !important;
+      }
+
+      .work_row {
+        margin-right: 30%;
+        padding-left: 0;
+      }
+
+      .work_row_icon {
+        margin-right: 20%;
+      }
+    }
+    @media screen and (max-width: 410px) and (min-width: 300px) {
+      .timeline-panel {
+        width: 240px !important;
+      }
+
+      .work_row_icon {
+        margin-right: 20%;
+      }
+
+      .work_row {
+        margin-right: 30%;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .underline1 {
+    width: 50px;
+    border-bottom: 3px solid @text_color;
   }
 
   .position_relative {
