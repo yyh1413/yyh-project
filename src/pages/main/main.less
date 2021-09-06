@@ -60,7 +60,6 @@
     background-size: cover;
     background-image: url('../../static/bg.jpg');
     color: transparent;
-    background-attachment: fixed;
     transition: opacity 1s;
     opacity: 0;
     .flex_direction_column();
@@ -432,7 +431,12 @@
   //   .flex_justify_space_between();
   //   .flex_align_items_center();
   // }
+  @media screen and (min-width: 1000px) {
+    #top {
+      background-attachment: fixed;
+    }
 
+  }
   @media screen and (max-width: 1000px) {
     .tob_nav {
       display: none !important;
