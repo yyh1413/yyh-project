@@ -1,11 +1,11 @@
 import * as React from 'react'
-import {Button, Form, Input} from 'antd';
+import { Button, Form, Input } from 'antd';
 import './main.less'
-// import log from '../../static/log.png'
 import log2 from '../../static/log2.png'
 import yx from '../../static/yx.png'
 import api from './config'
 import $ from 'jquery'
+import Footer from '../compoents/footer/footer';
 
 // import {SMTPClient} from 'emailjs'
 
@@ -73,7 +73,7 @@ class Main extends React.Component<IProps, IState> {
           if ($target.length) {
             // @ts-ignore
             const targetOffset = $target.offset().top;
-            $('html,body').animate({scrollTop: targetOffset}, 500);
+            $('html,body').animate({ scrollTop: targetOffset }, 500);
             return false;
           }
         }
@@ -122,14 +122,13 @@ class Main extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const scrollWidth = this.scrollWidth < 1000;
-    const {info} = api;
+    const { info } = api;
     const border = true;
     return (
       <div id={'main'}>
         {/*-------------------------------悬浮nav---------------------------------------------------*/}
         <div className="navBar" id={'navBar'}>
-          <div className="topLogo"/>
+          <div className="topLogo" />
           <div className="navBox">
             {this.tobNavComponent()}
           </div>
@@ -141,10 +140,10 @@ class Main extends React.Component<IProps, IState> {
           <div id="midground" className="wall"></div>
           <div id="foreground" className="wall"></div>
           <div id="top1" className="wall"></div>
-          <a href={'top'}/>
+          <a href={'top'} />
           <div id={'top_title'}>
             <div>
-              <img src={log2} alt="" className={"top_log"}/>
+              <img src={log2} alt="" className={"top_log"} />
             </div>
             <div className={"tob_nav"}>
               {this.tobNavComponent()}
@@ -153,11 +152,11 @@ class Main extends React.Component<IProps, IState> {
           <div className={"middle"}>
             <div id="topTitle">
               <h1 className={'top_title_main'}>{info.title}</h1>
-              <p className="underline"/>
-              <h2 style={{textAlign: "center"}}>
-                <span style={{color: "rgba(255,255,255,0.6)"}}>/*</span>
+              <p className="underline" />
+              <h2 style={{ textAlign: "center" }}>
+                <span style={{ color: "rgba(255,255,255,0.6)" }}>/*</span>
                 {` 这里是${info.name}的个人主页`}
-                <span style={{color: "rgba(255,255,255,0.6)"}}>*/</span>
+                <span style={{ color: "rgba(255,255,255,0.6)" }}>*/</span>
               </h2>
             </div>
           </div>
@@ -168,10 +167,10 @@ class Main extends React.Component<IProps, IState> {
         </div>
         {/*-------------------------------首页---------------------------------------------------*/}
         {/*-------------------------------关于---------------------------------------------------*/}
-        <div id="about" style={{position: "relative"}}>
-          <a href={'about'}/>
+        <div id="about" style={{ position: "relative" }}>
+          <a href={'about'} />
           <h3>关于我</h3>
-          <p className="underline1"/>
+          <p className="underline1" />
           <div className="tagBox">
             {
               info.tag.map((item, index) => (
@@ -186,21 +185,21 @@ class Main extends React.Component<IProps, IState> {
               ))
             }
           </div>
-          <div className="ball"/>
+          <div className="ball" />
           {/*<canvas id="canvas" style={{position: "absolute", width: "100%"}}/>*/}
         </div>
         {/*-------------------------------关于---------------------------------------------------*/}
         {/*---------------------------------作品-------------------------------------------------*/}
         <div id="work">
-          <a href={'work'}/>
+          <a href={'work'} />
           <h3>我的作品</h3>
-          <p className="underline1"/>
+          <p className="underline1" />
           <div className="workList">
             {
               info.work.map((item, index) => (
                 <span key={index} className="workLink">
                   <div className="workLinkPic">
-                    <img src={item.bgImg} alt="" width={"100%"} height={155}/>
+                    <img src={item.bgImg} alt="" width={"100%"} height={155} />
                   </div>
                   <div className="workLinkTextBox">
                     <p className="workLinkText1">{item.workLinkText1}</p>
@@ -215,12 +214,12 @@ class Main extends React.Component<IProps, IState> {
         {/*---------------------------------作品-------------------------------------------------*/}
         {/*---------------------------------日志-------------------------------------------------*/}
         <div id="log">
-          <a href={'log'}/>
+          <a href={'log'} />
           <h3>小站大事记</h3>
-          <p className="underline1"/>
+          <p className="underline1" />
           <p className="tip">左右滑动来查看更多</p>
           <div className="logBoxOuter">
-            <div className="logMaskL"/>
+            <div className="logMaskL" />
             <div id="logBox">
               {
                 info.log.map((item, index) => (
@@ -232,15 +231,15 @@ class Main extends React.Component<IProps, IState> {
               }
               <span className="logContent"><p className="logText3">TO BE</p><p className="logText3">CONTINUED...</p></span>
             </div>
-            <div className="logMaskR"/>
+            <div className="logMaskR" />
           </div>
         </div>
         {/*---------------------------------日志-------------------------------------------------*/}
         {/*---------------------------------联系-------------------------------------------------*/}
         <div id="contact">
-          <a href={'contact'}/>
+          <a href={'contact'} />
           <h3>发送留言</h3>
-          <p className="underline1"/>
+          <p className="underline1" />
           <div className={'contact_page'}>
             <div className={'contact_page_1 contact_page_padleft'}>
               <Form
@@ -249,22 +248,22 @@ class Main extends React.Component<IProps, IState> {
               >
                 <Form.Item
                   name="name"
-                  rules={[{required: true, message: 'Please input your name!'}]}
+                  rules={[{ required: true, message: 'Please input your name!' }]}
                 >
-                  <Input placeholder="Your Name" bordered={border} style={{height: "60px"}}/>
+                  <Input placeholder="Your Name" bordered={border} style={{ height: "60px" }} />
                 </Form.Item>
 
                 <Form.Item
                   name="email"
-                  rules={[{required: true, message: 'Please input your email!'}]}
+                  rules={[{ required: true, message: 'Please input your email!' }]}
                 >
-                  <Input placeholder="Your Email" bordered={border} style={{height: "60px"}}/>
+                  <Input placeholder="Your Email" bordered={border} style={{ height: "60px" }} />
                 </Form.Item>
                 <Form.Item
                   name="msg"
-                  rules={[{required: true, message: 'Please input your msg!'}]}
+                  rules={[{ required: true, message: 'Please input your msg!' }]}
                 >
-                  <Input.TextArea placeholder="Massage" bordered={border} autoSize={{minRows: 6, maxRows: 10}}/>
+                  <Input.TextArea placeholder="Massage" bordered={border} autoSize={{ minRows: 6, maxRows: 10 }} />
 
                 </Form.Item>
                 <Form.Item>
@@ -277,12 +276,12 @@ class Main extends React.Component<IProps, IState> {
             <div className={'contact_page_1 contact_page_padright'}>
               <h2>联系我</h2>
               <p>
-                <img src={yx} alt="" style={{height: "20px", width: "20px"}}/>&nbsp;&nbsp;&nbsp;
+                <img src={yx} alt="" style={{ height: "20px", width: "20px" }} />&nbsp;&nbsp;&nbsp;
                 <span>{info.email}</span>
               </p>
               <p>{`即时客服QQ：${info.qq}`}</p>
               <p>无休，8:00AM-21:00PM。紧急事件24小时响应。</p>
-              <br/>
+              <br />
               <a onClick={() => this.props.history.push('/resume')}>个人简历</a>
             </div>
           </div>
@@ -290,10 +289,7 @@ class Main extends React.Component<IProps, IState> {
         {/*---------------------------------联系-------------------------------------------------*/}
 
         {/*---------------------------------footer-------------------------------------------------*/}
-        <div id="footer">
-          <div>©Copyright 2021 | 由杨宇豪服务提供™、旗下产品。</div>
-          {/*<div> </div>*/}
-        </div>
+        <Footer />
         {/*---------------------------------footer-------------------------------------------------*/}
       </div>
     )
@@ -304,10 +300,10 @@ class Main extends React.Component<IProps, IState> {
   };
   private tobNavComponent = () => {
     return api.tobNav.map((item, index) => {
-        return (
-          <a key={index} href={item.position} className={"navLink link_a"}>{item.name}</a>
-        )
-      }
+      return (
+        <a key={index} href={item.position} className={"navLink link_a"}>{item.name}</a>
+      )
+    }
     );
   }
 }

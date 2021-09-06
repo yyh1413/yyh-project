@@ -17,7 +17,7 @@ const Login: React.FC = () => {
     const onFinish = (values: any) => {
         sessionStorage.setItem('login', String(true))
         if (values.username === 'TDC0199999Yangyuhao' && values.password === 'Yangyuhao') {
-            dispatch(action.loginSuccess('郭小洋'))
+            dispatch(action.loginSuccess('杨宇豪'))
             setLogin(true)
         }
     };

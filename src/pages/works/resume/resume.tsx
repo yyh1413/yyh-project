@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import './resume.less'
 import config from './config'
 import tx from './static/tx.png'
-import {Progress} from "antd";
+import { Progress } from "antd";
 import gwb from './static/公文包.svg'
-
+import Footer from '../../compoents/footer/footer';
 let intal: any;
 let index = 0;
 let flag = '';
 const Resume: React.FC = () => {
-  const {info,} = config;
+  const { info, } = config;
   const [text, setText] = useState('');
   useEffect(() => {
     intal = setInterval((text) => {
@@ -50,53 +50,56 @@ const Resume: React.FC = () => {
               <div className={'home_title'}>我是</div>
               <div className={'home_title_1'}>{text}</div>
             </div>
-            <div className={"hr"}/>
-            <HomeInfo/>
+            <div className={"hr"} />
+            <HomeInfo />
           </div>
           <div className="header_left">
-            <img src={tx} alt=""/>
+            <img src={tx} alt="" />
           </div>
         </div>
       </div>
       {/*-------------------------------我的经验---------------------------------------------------*/}
-      <div id="about" style={{position: "relative"}}>
+      <div id="about" style={{ position: "relative" }}>
         <h1>工作参与</h1>
-        <p className="underline1"/>
+        <p className="underline1" />
         <div className={'about_row'}>
           <div>
             <h2>我的教育</h2>
-            <Experience data={info.experience.education}/>
+            <Experience data={info.experience.education} />
           </div>
 
           <div>
             <h2>我的经验</h2>
-            <Experience data={info.experience.work}/>
+            <Experience data={info.experience.work} />
           </div>
         </div>
       </div>
       {/*-------------------------------我的经验---------------------------------------------------*/}
       {/*-------------------------------我的技能---------------------------------------------------*/}
-      <div id="skill" style={{position: "relative"}}>
+      <div id="skill" style={{ position: "relative" }}>
         <h1>我的技能</h1>
-        <p className="underline1"/>
+        <p className="underline1" />
         <div className={'skill_row'}>
-          <Skill data={info.skill}/>
+          <Skill data={info.skill} />
         </div>
       </div>
       {/*-------------------------------我的技能---------------------------------------------------*/}
       {/*-------------------------------我的技能---------------------------------------------------*/}
-      <div id="work" style={{position: "relative"}}>
+      <div id="work" style={{ position: "relative" }}>
         <h1>我的经历</h1>
-        <p className="underline1"/>
-        <Work data={config.info.work}/>
+        <p className="underline1" />
+        <Work data={config.info.work} />
       </div>
       {/*-------------------------------我的技能---------------------------------------------------*/}
+      {/*---------------------------------footer-------------------------------------------------*/}
+      <Footer />
+      {/*---------------------------------footer-------------------------------------------------*/}
     </div>
   );
 }
 
 type wrkType = typeof config.info.work;
-const Work: React.FC<{ data: wrkType }> = ({data}) => {
+const Work: React.FC<{ data: wrkType }> = ({ data }) => {
   const scrollWidth = window.innerWidth;
   console.log()
   const color = ['#44c7f4', '#eb5424', '#bb1e10', '#237f52', '#fdbd10'];
@@ -109,8 +112,8 @@ const Work: React.FC<{ data: wrkType }> = ({data}) => {
               <div className={'work_row_ex'}>
                 <div className={'work_row_date'}><span>{item.date}</span></div>
                 <div className={'work_row_icon'}>
-                  <div className={'icon_div'} style={{backgroundColor: color[index]}}>
-                    <img src={gwb} alt="" width={26}/>
+                  <div className={'icon_div'} style={{ backgroundColor: color[index] }}>
+                    <img src={gwb} alt="" width={26} />
                   </div>
                 </div>
                 <div className={'work_row_readme'}>
@@ -135,7 +138,7 @@ const Work: React.FC<{ data: wrkType }> = ({data}) => {
 }
 
 type skillType = typeof config.info.skill;
-const Skill: React.FC<{ data: skillType }> = ({data}) => {
+const Skill: React.FC<{ data: skillType }> = ({ data }) => {
   return (
     <>
       {
@@ -148,7 +151,7 @@ const Skill: React.FC<{ data: skillType }> = ({data}) => {
               </div>
               <div className={'skill_ex_progress'}>
                 <Progress percent={item.percentage} showInfo={false} trailColor={'#e5e5e5'}
-                          strokeColor={'#00A86B'} style={{height: '9px'}}/>
+                  strokeColor={'#00A86B'} style={{ height: '9px' }} />
               </div>
             </div>
           )
@@ -158,16 +161,16 @@ const Skill: React.FC<{ data: skillType }> = ({data}) => {
   )
 }
 type educationType = typeof config.info.experience.education;
-const Experience: React.FC<{ data: educationType }> = ({data}) => {
+const Experience: React.FC<{ data: educationType }> = ({ data }) => {
   return (
     <>
       {
         data.map((item, index) => {
           return (
             <div className={'about_ex'} key={index}>
-              <div className={'flex_display'} style={{marginBottom: "15px"}}>
+              <div className={'flex_display'} style={{ marginBottom: "15px" }}>
                 <div className={'about_img'}>
-                  <img src={item.img} alt="" width={40} height={40}/>
+                  <img src={item.img} alt="" width={40} height={40} />
                 </div>
                 <div>
                   <h3>{item.company}</h3>
@@ -185,7 +188,7 @@ const Experience: React.FC<{ data: educationType }> = ({data}) => {
   )
 }
 const HomeInfo: React.FC = () => {
-  const {info} = config;
+  const { info } = config;
   const openUrl = (flag: boolean, url: string) => {
     if (flag) {
       window.open(url);
@@ -199,7 +202,7 @@ const HomeInfo: React.FC = () => {
             <div key={index} className={'home_info_ul'}>
               <div className={'home_label'}>{item.label}</div>
               <div className={'home_value ' + (!!item.url && 'home_value_url')}
-                   onClick={() => openUrl(!!item?.url, item.value)}>{item.value}</div>
+                onClick={() => openUrl(!!item?.url, item.value)}>{item.value}</div>
             </div>
           )
         })

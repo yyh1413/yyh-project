@@ -11,7 +11,7 @@ const info = {
     {label: "NAME", value: '杨宇豪'},
     {label: "BIRTH", value: '97.10.20'},
     {label: "PHONE", value: '17645221413'},
-    {label: "ADDRESS", value: 'DA.LIAN'},
+    // {label: "ADDRESS", value: 'DA.LIAN'},
     {label: "E-MAIL", value: '17645221413@163.com'},
     {label: "WEBSITE", value: 'yangyuhao.cn', url: true},
     {label: "gitHub", value: 'https://github.com/yyh1413', url: true},

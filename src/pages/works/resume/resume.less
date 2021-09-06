@@ -209,7 +209,9 @@
         height: 250px;
         padding: 4% 25%;
       }
-
+      .home_label {
+        width: 90px !important;
+      }
       .timeline-panel {
         width: 200px;
       }
@@ -220,6 +222,9 @@
       }
     }
     @media screen and (max-width: 410px) and (min-width: 300px) {
+      .home_label {
+        width: 90px !important;
+      }
       .header_left {
         .flex_justify_items_center();
         height: 220px;
@@ -242,6 +247,7 @@
       padding: 20px;
     }
   }
+
   //------------------------home-----------------------------------------------
 
   #about, #skill, #work {
@@ -267,7 +273,7 @@
       font-size: 1.4rem;
     }
   }
-
+ 
   #about {
     .about_row {
       width: 100%;
@@ -497,7 +503,21 @@
       }
     }
   }
-
+  @media screen and (max-width:320px) {
+    .header_left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 168px !important;
+      padding: 0% 25% 4%  !important;
+   }
+   #about {
+      padding: 0 6% !important;
+      }
+     .skill_ex{
+        width: 297px !important;
+      }
+  }
   .underline1 {
     width: 50px;
     border-bottom: 3px solid @text_color;
